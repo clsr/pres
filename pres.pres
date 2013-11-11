@@ -1,0 +1,138 @@
+#: Documentation of pres' features:
+
+#: statements (used after #, such as "#style: color:green" or "#-", the
+#: colon may be omitted if no parameter is used):
+#:
+#: - style: key:value
+#: CSS style for all items from now on until deactivated. Key may be
+#: JavaScript-style (backgroundImage) or CSS-style (background-image).
+#:
+#: - nostyle: key
+#: Removes the style. If no key is provided, removes all styles.
+#:
+#: - globalstyle: key:value
+#: Sets the style for the whole document (body).
+#:
+#: - contentstyle: key:value
+#: Sets the style for the content (div between header and footer).
+#:
+#: - notitle
+#: Hides the presentation title.
+#:
+#: - nosubtitle
+#: Hides the slide title.
+#:
+#: - noheader
+#: Hides the header.
+#:
+#: - nofooter
+#: Hides the footer.
+#:
+#: - -
+#: Clears floats on both sides (equivalent to <div style="clear:both"></div>).
+#:
+#: - :
+#: Comment, as seen on the start of this line.
+#:
+#: example:
+#: #globalstyle: background-color: gray
+#: #nofooter
+
+#: expressions (used after !, as in "!b this is bold"):
+#: b - bold
+#: i - italic
+#: o - overline
+#: u - underline
+#: c - center
+#: ^ - superscript
+#: v - subscript
+#: < - float left
+#: > - float right
+#: I - image; parameters: image URL, title text (optional)
+#: @ - hyperlink; parameter: URL
+#: ! - evaluate JavaScript when parsing
+#:
+#: examples:
+#: !biou BOLD ITALIC OVER/UNDERLINED TEXT
+#: !@ http://example.com/ blue link
+#: !I http://example.net/stuff.png this is the mouseover text
+#: !I@ http://example.org/image.png http://example.org/image-link.html
+#: !! 'Today is ' + new Date().toDateString()
+#:
+#: An expression is only applied to the text that follows it. It has no effect
+#: on the content on other lines.
+#:
+#: There may be several experssions following the ! and they'll all affect the
+#: same line, but not all permutations may work. For example, the biou^vc may
+#: all work in any order, but image links MUST be !I@, as !@I will not work.
+
+#: other:
+#:
+#: Presentation title:
+#: The first line before any slide that's not a statement. If omitted, the
+#: title will be hidden.
+#:
+#: New slide (*):
+#: Begins a new slide. Must be used before any content other than title or
+#: statements. If not followed by the slide name, the subtitle for that slide
+#: is hidden.
+#:
+#: Paragraph:
+#: Used in a slide. All lines until a blank line are joined with spaces and
+#: make a paragraph.
+#:
+#: Unordered list (-):
+#: Used in a slide. Any line that starts with - begins an unordered list, or,
+#: if already in a list, starts a new list item. The list ends at a blank line,
+#: switching back to paragraphs.
+
+#: HTML tags may be used anywhere in text, as they're not stripped out. That
+#: way, additional styling may be done (such as using <pre> for code snippets).
+
+#::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::#
+
+#globalstyle: font-size: 125%
+#contentstyle: fontSize: 125%
+#contentstyle: font-family: serif
+
+pres
+
+* a JavaScript presentation utility
+!b pres
+is a fully client-side JavaScript-based presentation program.
+
+It can run on most modern browsers (Firefox and Chromium work well).
+
+The presentations are written using a custom simple markup language that supports most of the basic features commonly used in presentations.
+
+* Features (1)
+- slides
+- navigation with left/pageup/backspace/&lt; button on header and right/pagedown/space/&gt; button on header
+- <pre>inline HTML</pre>
+#style: color:red
+#style: text-decoration: underline
+- CSS styles
+#nostyle
+- !! 'inline' + '\x20' + 'j'.toUpperCase() + 'avaScritp'.replace(/(.)(.)$/, '$2$1')
+- !biuoc simple bold/italic/underline/overline/centering
+- !^^ superscript
+!^ a
+n
+!v d
+!vv subscript
+- floating
+!< left
+and
+!> right
+
+* Features (2)
+- images (click to zoom):
+!I http://www.google.com/hostednews/img/small-google-logo.gif images
+- links:
+!@ http://google.com/ google
+- image links: 
+!I@ http://www.google.com/hostednews/img/small-google-logo.gif http://google.com/
+- paragraphs
+- unordered lists
+- comments
+- exporting presentations as static HTML files (see footer)

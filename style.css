@@ -1,0 +1,92 @@
+body {
+	font-family: 'Open Sans', Arial, sans-serif;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#header {
+	line-height: 0.5em;
+	margin: 0;
+	padding: 0;
+	padding-left: 1em;
+	padding-right: 1em;
+	border: 0;
+	border-bottom: 1px solid black;
+}
+#header h1 {
+	font-size: 3em;
+	text-decoration: none;
+	text-align: center;
+	font-weight: bold;
+}
+#header h2 {
+	font-size: 2em;
+	text-decoration: none;
+	text-align: center;
+	font-weight: normal;
+}
+#header #prev {
+	float: left;
+	font-size: 3em;
+}
+#header #next {
+	float: right;
+	font-size: 3em;
+}
+#header #prev, #header #next {
+	text-decoration: none;
+}
+#hide-header {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+#show-header {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+#content {
+	margin: 2em;
+	clear: both;
+}
+#content .title {
+	font-size: 1.5em;
+	font-weight: bold;
+}
+#content .subtitle {
+	font-size: 1.25em;
+	font-weight: normal;
+}
+
+#footer {
+	clear: both;
+	position: absolute;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	border-top: 1px solid black;
+	bottom: 0;
+}
+
+#footer p {
+	text-align: center;
+	font-size: 0.75em;
+	color: gray;
+}
+#footer p a {
+	text-decoration: none;
+}
+#hide-footer {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+#show-footer {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
