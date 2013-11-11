@@ -133,7 +133,7 @@ Pres.prototype.load = function(file, skipIfLoaded) {
 	this.slide = slide;
 
 	if (file === '') {
-		file = 'pres';
+		file = defaultPres;
 	}
 	if (!file.endsWith('.pres')) {
 		file = file + '.pres';
