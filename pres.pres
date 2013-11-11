@@ -49,7 +49,7 @@
 #: < - float left
 #: > - float right
 #: I - image; parameters: image URL, title text (optional)
-#: @ - hyperlink; parameter: URL
+#: @ - hyperlink; parameters: link URL, link text (optional, defaults to the URL)
 #: ! - evaluate JavaScript when parsing
 #:
 #: examples:
